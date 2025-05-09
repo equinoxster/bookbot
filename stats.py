@@ -11,3 +11,15 @@ def get_char_count(text):
         else:
             chars[c] = 1
     return chars
+
+def pretty_print(char_dict):
+    ordered = []
+    for key in char_dict.keys():
+        ordered.append({"char": key, "num": char_dict[key]})
+
+    ordered.sort(reverse=True, key=sort_on)
+    return ordered
+
+
+def sort_on(dict):
+    return dict["num"]
